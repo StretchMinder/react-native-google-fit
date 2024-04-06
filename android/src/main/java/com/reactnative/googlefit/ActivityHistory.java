@@ -86,7 +86,6 @@ public class ActivityHistory {
         for (DataType dt : WORKOUT_FIELD_DATATYPE) {
             readRequestBuilder.aggregate(dt);
         }
-        readRequestBuilder.aggregate(DataType.TYPE_DISTANCE_DELTA);
 
         //bucket by activity segment is critical, not bucketByTime
         DataReadRequest readRequest = readRequestBuilder
@@ -148,7 +147,6 @@ public class ActivityHistory {
                                         case DURATION_FIELD_NAME:
                                             map.putInt(fieldName, dataPoint.getValue(field).asInt());
                                             break;
-                                        case DISTANCE_FIELD_NAME:
                                         case CALORIES_FIELD_NAME:
                                         case INTENSITY_FIELD_NAME:
                                             map.putDouble(fieldName, dataPoint.getValue(field).asFloat());
