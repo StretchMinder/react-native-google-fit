@@ -78,10 +78,9 @@ dependencies {
         exclude group: 'com.android.support'
     }
     if (supportLibVersion && androidXVersion == null) {
-        implementation "com.android.support:appcompat-v7:$supportLibVersion"
+        implementation "com.android.support:appcompat-v7:1.6.0"
     } else {
-        def defaultAndroidXVersion = "1.+"
-        implementation "androidx.appcompat:appcompat:${safeExtGet(androidXVersion, defaultAndroidXVersion)}"
+        implementation "androidx.appcompat:appcompat:1.6.0"
     }
     implementation "com.google.android.gms:play-services-auth:${safeExtGet('authVersion', '+')}"
     implementation "com.google.android.gms:play-services-fitness:${safeExtGet('fitnessVersion', '+')}"
